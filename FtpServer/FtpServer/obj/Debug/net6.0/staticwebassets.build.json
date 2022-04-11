@@ -1,0 +1,54 @@
+{
+  "Version": 1,
+  "Hash": "JAN83H/WHxOnNhZojSTwHmk0bF6YJKUzL9snVFYAqco=",
+  "Source": "FtpServer",
+  "BasePath": "_content/FtpServer",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "FtpServer\\wwwroot",
+      "Source": "FtpServer",
+      "ContentRoot": "C:\\Users\\Toha1\\source\\repos\\FtpServer\\FtpServer\\wwwroot\\",
+      "BasePath": "_content/FtpServer",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\Toha1\\source\\repos\\FtpServer\\FtpServer\\wwwroot\\uploads\\0bufbfy2.krz.jpeg",
+      "SourceId": "FtpServer",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Toha1\\source\\repos\\FtpServer\\FtpServer\\wwwroot\\",
+      "BasePath": "_content/FtpServer",
+      "RelativePath": "uploads/0bufbfy2.krz.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\0bufbfy2.krz.jpeg"
+    },
+    {
+      "Identity": "C:\\Users\\Toha1\\source\\repos\\FtpServer\\FtpServer\\wwwroot\\uploads\\wy1wzzuy.rvt.jpeg",
+      "SourceId": "FtpServer",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Toha1\\source\\repos\\FtpServer\\FtpServer\\wwwroot\\",
+      "BasePath": "_content/FtpServer",
+      "RelativePath": "uploads/wy1wzzuy.rvt.jpeg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\uploads\\wy1wzzuy.rvt.jpeg"
+    }
+  ]
+}
