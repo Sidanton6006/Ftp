@@ -18,6 +18,7 @@ import com.example.ftpserver.API.Image;
 import com.example.ftpserver.API.NetworkService;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.squareup.picasso.Picasso;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -46,43 +47,25 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void handleClick(View view){
+        iv.setImageURI(null);
+
         NetworkService.getInstance()
                 .getFtpApi()
                 .uploadImage(base64Image)
                 .enqueue(new Callback<String>() {
                     @Override
                     public void onResponse(Call<String> call, Response<String> response) {
-                        tv.setText(response.body());
+                        String res = response.body();
+                        String filename = res.substring(res.lastIndexOf('\\')+1);
+                        Picasso.get().load("http://10.0.2.2:7278/images/"+filename).into(iv);
+                        tv.setText("Photo successfully uploaded!!!!");
                     }
 
                     @Override
                     public void onFailure(Call<String> call, Throwable t) {
-                        tv.setText("Error"+t.getMessage());
-                        System.out.println(t.toString());
+                        tv.setText("There is some errors");
                     }
                 });
-
-//        Gson gson = new GsonBuilder().setLenient().create();
-//
-//        Retrofit retrofit = new Retrofit.Builder()
-//                .baseUrl("http://10.0.2.2:7278")
-//                .addConverterFactory(GsonConverterFactory.create(gson))
-//                .build();
-//        IFtpApi ftpApi = retrofit.create(IFtpApi.class);
-//        Image image = new Image(base64Image);
-//        Call<Image> call = ftpApi.uploadImage(image);
-//        call.enqueue(new Callback<Image>() {
-//            @Override
-//            public void onResponse(Call<Image> call, Response<Image> response) {
-//                tv.setText(response.body().toString());
-//            }
-//
-//            @Override
-//            public void onFailure(Call<Image> call, Throwable t) {
-//                tv.setText("Error"+t.getMessage());
-//                System.out.println(t.toString());
-//            }
-//        });
     }
 
     public void pick(View view) {

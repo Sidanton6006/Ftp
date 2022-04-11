@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using System.Drawing;
 using System.Drawing.Imaging;
 
@@ -44,7 +45,7 @@ namespace FtpServer.Controllers
             var dir = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "uploads", randomFilename);
             bmp.Save(dir, ImageFormat.Jpeg);
 
-            return Ok();
+            return Ok(JsonConvert.SerializeObject(dir));
         }  
 
         [HttpPost]
